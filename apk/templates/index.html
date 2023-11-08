@@ -1,0 +1,24 @@
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css.css' %}">
+</head>
+<body>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="d1" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="d1">
+            {% for i in cata %}
+          <li><a class="dropdown-item" href="{% url 'catag' i.name %}">{% if  forloop.counter <= 2 %}{{i.name}}{% endif %}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    
+ <script src="{% static 'js.js' %}"></script>   
+</body>
+</html>
